@@ -73,7 +73,10 @@
                 />
               </div>
             </div>
-            <base-button class="base-button btn-submit btn-primary">
+            <base-button
+              class="base-button btn-submit btn-primary"
+              @click="submit()"
+            >
               確認
               <img src="~/static/images/btn_ar_af.png" alt="btn_link_ar" class="icon-ar">
             </base-button>
@@ -104,6 +107,12 @@ export default {
         email: "",
         contact: ""
       }
+    }
+  },
+  methods: {
+    submit () {
+      this.$refs.form.submit()
+      // TODO Handle send email
     }
   }
 }

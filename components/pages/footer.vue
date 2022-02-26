@@ -5,11 +5,11 @@
         <img src="~/static/images/logo_illust.png" alt="logo_illust" class="logo-illust">
       </div>
       <div class="content-wrap">
-        <p class="title">もぐし<br/>海。こども園<br><span>MOGUSHIUMINO KODOMOEN</span></p>
+        <p class="title">もぐし<br class="title-br"/>海。こども園<br><span>MOGUSHIUMINO KODOMOEN</span></p>
         <p class="contact-us">お問い合わせ・お申し込み</p>
         <p class="tel">
           <img src="~/static/images/footer_tell_icon.png" alt="phone" class="icon-phone">
-          <span>0969-72-2772</span>
+          <a href="tel:0969722772">0969-72-2772</a>
         </p>
         <p class="address">千863-1901 熊本県天草市牛深町1212-2</p>
         <base-button
@@ -74,6 +74,11 @@ export default {
       text-align: center;
       color: #0f6eb8;
       font-weight: 700;
+      @media only screen and (max-width: 768px) {
+      &-br {
+        display: none;
+      }
+    }
       span {
         font-size: 13px;
         font-weight: 400;
@@ -100,8 +105,10 @@ export default {
         width: 20px;
         object-fit: contain;
       }
-      span {
+      a {
         padding-left: 8px;
+        color: #333333;
+        text-decoration: none;
       }
     }
     .address {

@@ -254,6 +254,11 @@ export default {
       border-bottom: 1px solid #f6f6f6;
       margin: 0;
       padding: 40px;
+      width: calc(100% - 100px);
+      .base-button {
+        max-width: 200px;
+        margin: 0 auto;
+      }
     }
    }
 }
