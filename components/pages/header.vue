@@ -29,7 +29,7 @@
             </div>
           </div>
         </div>
-        <div class="btn-menu" @click="handleClickMenu()">
+        <div class="btn-menu" @click="showModal()">
           <img
             src="~/static/images/icons-menu.svg"
             alt="tel"
@@ -43,7 +43,7 @@
       <div v-click-outside="handleClickOutSide" class="menu-wrap">
         <div
           class="btn-close"
-          @click="show = false"
+          @click="hideModal()"
         >
           <img src="~/static/images/icons-close.svg" alt="close" class="icon-close">
         </div>
@@ -161,13 +161,18 @@ export default {
     }
   },
   methods: {
-    handleClickMenu () {
-      this.show = true
-    },
     handleClickOutSide () {
       if (this.show) {
-        this.show = false
+        this.hideModal()
       }
+    },
+    showModal() {
+      this.show = true
+      document.body.classList.add("modal-open");
+    },
+    hideModal() {
+      this.show = false;
+      document.body.classList.remove("modal-open");
     }
   }
 }
